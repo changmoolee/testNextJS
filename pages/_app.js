@@ -1,18 +1,14 @@
-import NavBar from "../components/NavBar";
+import Layout from "../components/Layout";
+import "../styles/globals.css"; // 여기 _app js에서만 파일 쨰로 import가 가능
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <NavBar />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
       <span>hello</span>
-      <style jsx global>
-        {`
-          a {
-            color: white;
-          }
-        `}
-      </style>
+      <style jsx global></style>
     </>
   );
 }
